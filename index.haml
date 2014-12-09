@@ -2,12 +2,13 @@
   %head
     %meta{charset:"utf-8"}
     %meta{name:"viewport",content:"width=device-width,intial-scale=1.0"}
-    %title {block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}
+    %title {block:PostTitle}{PostTitle}: Welcome to my Blog!{/block:PostTitle}{Title}
     %link{rel:"stylesheet",href:"http://example.com/styles.css"}
     %link{rel:"alternate",type:"application/rss+xml",href:"{RSS}"}
-  %body
+  %body{bgcolor=#CAE1FF}
     %header
       %h1 {Title}
+      %h2 {Description}
       
       .main
         {block:Posts}
@@ -22,7 +23,8 @@
           .metadata
             %ul
               %li
-                %a{href:"{Permalink}"} Permalink to this post
+                %a{href:"{Permalink}"} View Post {NoteCount} notes
+                {LikeButton} {ReblogButton}
               {block:HasTags}
               %li Tagged
                 %ul
@@ -39,11 +41,12 @@
             %a{href:"{Permalink}"} {Caption}
           {/block:Caption}
           .content
-            {Body}
+            %img{src:"{PhotoURL-500}"}
           .metadata
             %ul
               %li
-                %a{href:"{Permalink}"} Permalink to this post
+                %a{href:"{Permalink}"} View Post {NoteCount} notes
+                {LikeButton} {ReblogButton}
               {block:HasTags}
               %li Tagged
                 %ul

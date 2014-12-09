@@ -2,20 +2,21 @@
   <head>
     <meta charset="utf-8"/>
     <meta content="width=device-width,intial-scale=1.0" name="viewport"/>
-    <title>{block:PostTitle}{PostTitle}: {/block:PostTitle}{Title}</title>
+    <title>{block:PostTitle}{PostTitle}: Welcome to my Blog!{/block:PostTitle}{Title}</title>
     <link href="http://example.com/styles.css" rel="stylesheet"></link>
-    <link href="{RSS %>" rel="alternate" type="application/rss+xml"></link>
+    <link href="{RSS}>" rel="alternate" type="application/rss+xml"></link>
   </head>
-  <body>
+  <body bgcolor="#CAE1FF">
     <header>
       <h1>{Title}</h1>
+      <h2>{Description}</h2>
       <div class="main">
         {block:Posts}
         {block:Text}
         <div class="post-text">
           {block:Title}
           <h1>
-            <a href="{Permalink %>">{Title}</a>
+            <a href="{Permalink}>">{Title}</a>
           </h1>
           {/block:Title}
           <div class="content">
@@ -24,14 +25,15 @@
           <div class="metadata">
             <ul>
               <li>
-                <a href="{Permalink %>">Permalink to this post</a>
+                <a href="{Permalink}>">View Post {NoteCount} notes</a>
+                {LikeButton} {ReblogButton}
               </li>
               {block:HasTags}
               <li>Tagged
                 <ul>
                   {block:Tags}
                   <li>
-                    <a href="{TagURL %>">{Tag}</a>
+                    <a href="{TagURL}>">{Tag}</a>
                   </li>
                   {/block:Tags}
                 </ul>
@@ -45,23 +47,24 @@
         <div class="post-photo">
           {block:Caption}
           <h1>
-            <a href="{Permalink %>">{Caption}</a>
+            <a href="{Permalink}>">{Caption}</a>
           </h1>
           {/block:Caption}
           <div class="content">
-            {Body}
+            <img src="{PhotoURL-500}>"/>
           </div>
           <div class="metadata">
             <ul>
               <li>
-                <a href="{Permalink %>">Permalink to this post</a>
+                <a href="{Permalink}>">View Post {NoteCount} notes</a>
+                {LikeButton} {ReblogButton}
               </li>
               {block:HasTags}
               <li>Tagged
                 <ul>
                   {block:Tags}
                   <li>
-                    <a href="{TagURL %>">{Tag}</a>
+                    <a href="{TagURL}>">{Tag}</a>
                   </li>
                   {/block:Tags}
                 </ul>
@@ -76,7 +79,7 @@
     </header>
     <footer>
       <p>Get the
-        <a href="{RSS %>">feed for this blog</a>
+        <a href="{RSS}>">feed for this blog</a>
       </p>
     </footer>
   </body>
