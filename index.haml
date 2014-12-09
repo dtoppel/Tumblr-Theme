@@ -32,6 +32,27 @@
                   {/block:Tags}
               {/block:HasTags}
         {/block:Text}
+        {block:Photo}
+        .post-photo
+          {block:Caption}
+          %h1 
+            %a{href:"{Permalink}"} {Caption}
+          {/block:Caption}
+          .content
+            {Body}
+          .metadata
+            %ul
+              %li
+                %a{href:"{Permalink}"} Permalink to this post
+              {block:HasTags}
+              %li Tagged
+                %ul
+                  {block:Tags}
+                  %li
+                    %a{href:"{TagURL}"} {Tag}
+                  {/block:Tags}
+              {/block:HasTags}
+        {/block:Photo}
         {/block:Posts}
     
     
