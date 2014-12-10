@@ -3,9 +3,9 @@
     %meta{charset:"utf-8"}
     %meta{name:"viewport",content:"width=device-width,intial-scale=1.0"}
     %title {block:PostTitle}{PostTitle}: Welcome to my Blog!{/block:PostTitle}{Title}
-    %link{rel:"stylesheet",href:"http://example.com/styles.css"}
+    %link{rel:"stylesheet",href:"http://static.tumblr.com/xkbegps/mKRngdx94/screen.css"}
     %link{rel:"alternate",type:"application/rss+xml",href:"{RSS}"}
-  %body{bgcolor:"#CAE1FF"}
+  %body
     %header
       %h1 {Title}
       %h2 {Description}
@@ -20,7 +20,7 @@
           {/block:Title}
           .content
             {Body}
-          .metadata
+          .text-metadata
             %ul
               %li
                 %a{href:"{Permalink}"} View Post {NoteCount} notes
@@ -41,8 +41,12 @@
             %a{href:"{Permalink}"} {Caption}
           {/block:Caption}
           .content
-            %img{src:"http://40.media.tumblr.com/07b1ea5f268f181c4d42695431a10aa8/tumblr_ngc0unlYWZ1tkmnc1o1_1280.jpg"}
-          .metadata
+            %img{src:"{PhotoURL-500}", alt:"{PhotoAlt}"} {LinkCloseTag} {block:HighRes}
+              %a{href:"{PhotoURL-HighRes}"} %pView in High-Res
+              {/block:HighRes}
+            {block:Exif}
+            {Caption}
+          .photo-metadata
             %ul
               %li
                 %a{href:"{Permalink}"} View Post {NoteCount} notes

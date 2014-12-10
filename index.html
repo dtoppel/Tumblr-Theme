@@ -3,10 +3,10 @@
     <meta charset="utf-8"/>
     <meta content="width=device-width,intial-scale=1.0" name="viewport"/>
     <title>{block:PostTitle}{PostTitle}: Welcome to my Blog!{/block:PostTitle}{Title}</title>
-    <link href="http://example.com/styles.css" rel="stylesheet"></link>
+    <link href="http://static.tumblr.com/xkbegps/mKRngdx94/screen.css" rel="stylesheet"></link>
     <link href="{RSS}>" rel="alternate" type="application/rss+xml"></link>
   </head>
-  <body bgcolor="#CAE1FF">
+  <body>
     <header>
       <h1>{Title}</h1>
       <h2>{Description}</h2>
@@ -22,7 +22,7 @@
           <div class="content">
             {Body}
           </div>
-          <div class="metadata">
+          <div class="text-metadata">
             <ul>
               <li>
                 <a href="{Permalink}>">View Post {NoteCount} notes</a>
@@ -51,9 +51,11 @@
           </h1>
           {/block:Caption}
           <div class="content">
-            <img src=http://40.media.tumblr.com/07b1ea5f268f181c4d42695431a10aa8/tumblr_ngc0unlYWZ1tkmnc1o1_1280.jpg>
+            <img src="{PhotoURL-500}" alt="{PhotoAlt}"/>{LinkCloseTag}{block:HighRes}
+            <a href="{PhotoURL-HighRes}"><p>View in High-Res</p></a>{/block:HighRes}{block:Exif}
+            {Caption}
           </div>
-          <div class="metadata">
+          <div class="photo-metadata">
             <ul>
               <li>
                 <a href="{Permalink}>">View Post {NoteCount} notes</a>
@@ -84,3 +86,4 @@
     </footer>
   </body>
 </html>
+
